@@ -5,14 +5,12 @@ import 'package:english_words/english_words.dart';
 import 'package:logger/logger.dart';
 
 var logger = Logger(
-	printer: PrettyPrinter(),
+  printer: PrettyPrinter(),
 );
 
 var loggerNoStack = Logger(
-	printer: PrettyPrinter(methodCount: 0),
+  printer: PrettyPrinter(methodCount: 0),
 );
-
-
 
 void main() => runApp(MyApp());
 
@@ -20,9 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wordPair = WordPair.random();
-	void _pressAction() {
-		logger.d("Pressd !!!!!!");
-	}
+    void _pressAction() {
+      logger.d("Pressd !!!!!!");
+    }
 
     return MaterialApp(
       title: 'Welcome to Flutter',
@@ -35,13 +33,12 @@ class MyApp extends StatelessWidget {
           // child: Text(wordPair.asPascalCase),
           child: RandomWords(),
         ),
-		floatingActionButton: FloatingActionButton(
-			onPressed: _pressAction,
-			tooltip: 'heheda',
-			child: Icon(Icons.add),
-		),
+        floatingActionButton: FloatingActionButton(
+          onPressed: _pressAction,
+          tooltip: 'heheda',
+          child: Icon(Icons.add),
+        ),
       ),
-
     );
   }
 }
@@ -61,7 +58,6 @@ class RandomWordsState extends State<RandomWords> {
     // log("word pair " + wordPair.asString);
     // return Text(wordPair.asPascalCase);
     final _suggestions = <WordPair>[];
-
 
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
